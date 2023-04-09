@@ -47,7 +47,7 @@ class UpdateInfoApps extends Base {
 		}
 
 		if (count($appWithUpdate) > 0) {
-			$this->writeArrayInOutputFormat($input, $output, $nextcloudUpdateState);
+			$this->writeArrayInOutputFormat($input, $output, $appWithUpdate);
 			return 1;
 		} else {
 			$this->writeArrayInOutputFormat($input, $output, []);
