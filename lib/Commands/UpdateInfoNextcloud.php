@@ -24,7 +24,7 @@ class UpdateInfoNextcloud extends Base {
 
 	public function configure(): void {
 		parent::configure();
-		$this->setName('udpateinfo:nextcloud')
+		$this->setName('updateinfo:nextcloud')
 			->setDescription('Displays the update info for nextcloud');
 	}
 

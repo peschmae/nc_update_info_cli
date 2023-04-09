@@ -30,7 +30,7 @@ class UpdateInfoApps extends Base {
 
 	public function configure(): void {
 		parent::configure();
-		$this->setName('udpateinfo:apps')
+		$this->setName('updateinfo:apps')
 			->setDescription('Displays the update info for apps');
 	}
 
@@ -43,9 +43,6 @@ class UpdateInfoApps extends Base {
 			$update = $this->installer->isUpdateAvailable($app);
 			if ($update !== false) {
 				$appWithUpdate[$app] = $update;
-				if ($output->isVeryVerbose()) {
-					$this->writeArrayInOutputFormat($input, $output, $update);
-				}
 			}
 		}
 
