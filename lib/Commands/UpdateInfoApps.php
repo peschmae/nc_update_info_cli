@@ -43,6 +43,9 @@ class UpdateInfoApps extends Base {
 			$update = $this->installer->isUpdateAvailable($app);
 			if ($update !== false) {
 				$appWithUpdate[$app] = $update;
+				if ($output->isVeryVerbose()) {
+					$this->writeArrayInOutputFormat($input, $output, $update);
+				}
 			}
 		}
 
