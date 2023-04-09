@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace OCA\UpdateInfoCli\Commands;
 
 use OC\App\AppManager;
+use OC\Installer;
 use OC\Core\Command\Base;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -15,10 +16,16 @@ class UpdateInfoApps extends Base {
 	 */
 	private $appManager;
 
-	public function __construct(AppManager $appManager) {
+	/**
+	 * @var Installer $installer
+	 */
+	private $installer;
+
+	public function __construct(AppManager $appManager, Installer $installer) {
 		parent::__construct();
 
 		$this->appManager = $appManager;
+		$this->installer = $installer;
 	}
 
 	public function configure(): void {
