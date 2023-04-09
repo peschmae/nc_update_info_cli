@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <!--
+    SPDX-FileCopyrightText: Mathias Petermann <mathias.petermann@gmail.com>
+    SPDX-License-Identifier: CC0-1.0
+    -->
+    <id>updateinfocli</id>
+    <name>Update Info Cli</name>
+    <summary>Provides a CLI command to list available update in JSON format for easier parsing</summary>
+    <description><![CDATA[Improves on the update:check command to support JSON output]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="mathias.petermann@gmail.com" >Mathias Petermann</author>
+    <namespace>UpdateInfoCli</namespace>
+    <category>monitoring</category>
+    <bugs>https://github.com/peschmae/nc_update_info_cli/issues</bugs>
+    <dependencies>
+        <nextcloud min-version="24" max-version="24"/>
+    </dependencies>
+    <commands>
+        <command>OCA\UpdateInfoCli\Commands\UpdateInfoNextcloud</command>
+        <command>OCA\UpdateInfoCli\Commands\UpdateInfoApps</command>
+    </commands>
+</info>
