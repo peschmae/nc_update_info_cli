@@ -31,7 +31,7 @@ class UpdateInfoNextcloud extends Base {
 	public function execute(InputInterface $input, OutputInterface $output): int {
 		$nextcloudUpdateState = $this->updateChecker->getUpdateState();
 
-		if ($nextcloudUpdateState['updateAvailable'])
+		if ($nextcloudUpdateState['updateAvailable']) {
 			unset($nextcloudUpdateState['updateLink']);
 			unset($nextcloudUpdateState['downloadLink']);
 			unset($nextcloudUpdateState['changes']);
