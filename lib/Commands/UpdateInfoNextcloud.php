@@ -36,7 +36,7 @@ class UpdateInfoNextcloud extends Base {
 			unset($nextcloudUpdateState['downloadLink']);
 			unset($nextcloudUpdateState['changes']);
 			$this->writeArrayInOutputFormat($input, $output, $nextcloudUpdateState);
-			return 1
+			return 1;
 		} else {
 			$this->writeArrayInOutputFormat($input, $output, ["updateAvailable" => false ]);
 		}

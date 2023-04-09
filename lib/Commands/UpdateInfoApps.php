@@ -15,11 +15,10 @@ class UpdateInfoApps extends Base {
 	 */
 	private $appManager;
 
-	public function __construct(AppManager $appManager, UpdateChecker $updateChecker) {
+	public function __construct(AppManager $appManager) {
 		parent::__construct();
 
 		$this->appManager = $appManager;
-		$this->updateChecker = $updateChecker;
 	}
 
 	public function configure(): void {
@@ -31,18 +30,18 @@ class UpdateInfoApps extends Base {
 	public function execute(InputInterface $input, OutputInterface $output): int {
 		$apps = $this->appManager->getInstalledApps();
 
-		$appWithUpdate = []
+		$appWithUpdate = [];
 
 		foreach ($apps as $app) {
 			$update = $this->installer->isUpdateAvailable($app);
 			if ($update !== false) {
-				$appWithUpdate[$app] = $update
+				$appWithUpdate[$app] = $update;
 			}
 		}
 
 		if (count($appWithUpdate) > 0) {
 			$this->writeArrayInOutputFormat($input, $output, $nextcloudUpdateState);
-			return 1
+			return 1;
 		} else {
 			$this->writeArrayInOutputFormat($input, $output, []);
 		}
